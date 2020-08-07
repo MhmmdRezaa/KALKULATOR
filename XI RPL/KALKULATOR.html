@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KALKULATOR</title>
+    <link rel="stylesheet" href="kalku.css">
+</head>
+<body>
+    <div class="konten">
+        <h1>RESULT</h1>
+        <div class="hasil">
+        <span id="hasil">0</span><br>
+        </div>
+        <input type="text" id="number1"placeholder="MONEY">
+            <select id="Operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        <input type="text" id="number2" placeholder="MONEY">
+        <button id="submit">=</button>
+        <button id="reset">c</button>
+        <div class="smile"></div>
+</div>
+
+
+<script>
+    const number1=document.getElementById('number1')
+    const number2=document.getElementById('number2')
+    const Operator=document.getElementById('Operator')
+    const submit=document.getElementById('submit')
+    const reset=document.getElementById('reset')
+    const hasil=document.getElementById('hasil')
+
+    submit.addEventListener('click',function(){
+        hasil.innerText = eval(number1.value + Operator.value + number2.value)
+    })
+    reset.addEventListener('click',function(){
+        hasil.innerText=0;
+        number1.value= 0 ;
+        number2.value= 0;
+    })
+</script>
+</body>
+</html>
